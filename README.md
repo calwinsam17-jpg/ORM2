@@ -19,12 +19,24 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 5 Car 
 
 ## PROGRAM
+```
+from django.db import models
+from django.contrib import admin
+class Car(models.Model):
+    brand = models.CharField(max_length=10)
+    car_name = models.CharField(max_length=10)
+    enginenum = models.IntegerField()
+    release = models.DateField
 
-Include Your program
+class carAdmin(admin.ModelAdmin):
+    list_display=('brand', 'car_name', 'enginenum', 'release')    
+from django.contrib import admin
+from.models import Car,carAdmin
+admin.site.register(Car,carAdmin)
+```
 
 ## OUTPUT
-Include your output
-
+![alt text](<Screenshot 2025-11-18 143512.png>)
 
 
 ## RESULT
